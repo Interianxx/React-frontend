@@ -4,6 +4,7 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
 import AuthService from "../services/auth.service";
+import NotificationService from "../services/notification.service";
 
 import { withRouter } from '../common/with-router';
 
@@ -56,9 +57,37 @@ class Login extends Component {
 
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.username, this.state.password).then(
-        () => {
-          this.props.router.navigate("/profile");
-          window.location.reload();
+        (data) => {
+          // Create a login notification
+          const notification = {
+            title: "Inicio de sesión exitoso",
+            message: `Bienvenido de nuevo, ${this.state.username}! Has iniciado sesión correctamente.`,
+            read: false
+          };
+
+          // We need to get the user data first to have the token for the notification request
+          const user = AuthService.getCurrentUser();
+
+          if (user && user.accessToken) {
+            // Create the notification and wait for it to complete before navigating
+            NotificationService.createNotification(notification)
+              .then(response => {
+                console.log("Login notification created:", response.data);
+                // Navigate to profile page and reload only after notification is created
+                this.props.router.navigate("/profile");
+                window.location.reload();
+              })
+              .catch(error => {
+                console.error("Error creating login notification:", error);
+                // Still navigate even if notification creation fails
+                this.props.router.navigate("/profile");
+                window.location.reload();
+              });
+          } else {
+            // If no user or token, just navigate
+            this.props.router.navigate("/profile");
+            window.location.reload();
+          }
         },
         error => {
           const resMessage =

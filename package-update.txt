@@ -1,0 +1,41 @@
+# React Bootstrap Installation
+
+To use the NotificationCenter component, you need to install react-bootstrap:
+
+```bash
+npm install react-bootstrap
+```
+
+This package is required for the Dropdown, Badge, and Button components used in the NotificationCenter.
+
+## Implementation Details
+
+The NotificationCenter component has been added to the navigation bar and will be displayed when a user is logged in. It shows a bell icon with a badge indicating the number of unread notifications.
+
+When clicked, it displays a dropdown with a list of notifications. Each notification shows:
+- Title
+- Message
+- Timestamp
+- Buttons to mark as read (if unread) and delete
+
+The component interacts with the backend API at:
+```
+http://localhost:8080/api/notifications
+```
+
+## API Endpoints
+
+The NotificationCenter uses the following API endpoints:
+- GET /api/notifications/count - Get the count of unread notifications
+- GET /api/notifications - Get all notifications
+- PUT /api/notifications/{id}/read - Mark a notification as read
+- PUT /api/notifications/read-all - Mark all notifications as read
+- DELETE /api/notifications/{id} - Delete a notification
+
+## CSS Styles
+
+The necessary CSS styles for the NotificationCenter have been added to App.css. These styles ensure that the notification dropdown and items match the overall design of the application.
+
+## Font Awesome
+
+Font Awesome has been added to the project for the bell icon. It's included via CDN in the index.html file.
