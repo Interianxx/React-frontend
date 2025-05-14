@@ -1,64 +1,98 @@
-# React Frontend
+# Proyecto de Gestión de Contactos y Categorías
 
-# Descripción
-# Este proyecto es una aplicación web desarrollada con React. 
-# Su propósito es servir como base para interfaces de usuario modernas y dinámicas.
+# Este proyecto es una aplicación web desarrollada con Spring Boot en el backend 
+# y React en el frontend. Su objetivo es gestionar contactos y categorías, 
+# con autenticación basada en tokens JWT.
 
+# ========================================
+# Características
+# ========================================
+
+# Autenticación y Autorización:
+# - Inicio de sesión y registro de usuarios.
+# - Protección de rutas en el frontend.
+# - Uso de tokens JWT para la autenticación.
+
+# Gestión de Contactos:
+# - Crear, leer, actualizar y eliminar contactos.
+# - Listar contactos asociados a un usuario autenticado.
+
+# Gestión de Categorías:
+# - Crear y listar categorías por usuario.
+# - Relación entre categorías y contactos.
+
+# Interfaz de Usuario:
+# - Navegación protegida con React Router.
+# - Manejo de errores y mensajes de estado.
+
+# ========================================
+# Tecnologías Utilizadas
+# ========================================
+
+# Backend:
+# - Java y Spring Boot
+#   - Spring Security para autenticación y autorización.
+#   - Spring Data JPA para acceso a la base de datos.
+#   - Base de datos relacional (MySQL, PostgreSQL, etc).
+
+# Frontend:
+# - React
+#   - React Router para navegación entre páginas.
+#   - Axios para llamadas HTTP al backend.
+
+# Otros:
+# - Maven para gestión de dependencias.
+# - JWT para manejo de sesiones autenticadas.
+# - Axios para consumo de API desde React.
+
+# ========================================
 # Estructura del Proyecto
-# .
-# ├── public/            # Archivos estáticos públicos
-# ├── src/               # Código fuente de React
-# ├── .env               # Variables de entorno
-# ├── .gitignore         # Archivos y carpetas ignorados por Git
-# ├── package.json       # Dependencias y scripts del proyecto
-# ├── yarn.lock          # Archivo de bloqueo de dependencias
-# └── package-update.txt # Registro de actualizaciones de paquetes
+# ========================================
 
-# Requisitos Previos
-# - Node.js >= 14.x
-# - Yarn (opcional, si prefieres npm, también es compatible)
+# Backend:
+# - src/main/java/com/bezkoder/springjwt/models        -> Entidades del modelo de datos
+# - src/main/java/com/bezkoder/springjwt/repository    -> Repositorios JPA
+# - src/main/java/com/bezkoder/springjwt/controllers   -> Controladores REST
+# - src/main/java/com/bezkoder/springjwt/security      -> Configuración de seguridad y JWT
 
-# Instalación
-# Clona el repositorio:
+# Frontend:
+# - src/services     -> Servicios para llamadas API (AuthService, ContactService)
+# - src/pages        -> Componentes principales de las páginas
+# - src/components   -> Componentes reutilizables (ej. ProtectedRoute)
+
+# ========================================
+# Instalación y Configuración
+# ========================================
+
+# Backend:
+# 1. Clonar el repositorio
+git clone <url-del-backend>
+
+# 2. Configurar la base de datos en application.properties o application.yml
+
+# 3. Ejecutar el backend con Maven
+mvn spring-boot:run
+
+# Frontend:
+# 1. Clonar el repositorio
 git clone https://github.com/Interianxx/React-frontend.git
 
-# Navega al directorio del proyecto:
+# 2. Instalar dependencias
 cd React-frontend
-
-# Instala las dependencias:
 yarn install
-# o, si prefieres npm:
+# o
 npm install
 
-# Ejecución en Desarrollo
-# Inicia el servidor de desarrollo:
+# 3. Ejecutar el frontend en modo desarrollo
 yarn start
-# o con npm:
+# o
 npm start
 
-# El servidor estará disponible en: http://localhost:3000
+# La aplicación estará disponible en: http://localhost:3000
 
-# Scripts Disponibles
-# - yarn start: Inicia la aplicación en modo desarrollo.
-# - yarn build: Compila la aplicación para producción.
-# - yarn test: Ejecuta las pruebas (si están configuradas).
-# - yarn eject: Expone la configuración de Create React App (irreversible).
-
-# Variables de Entorno
-# Puedes definir variables en el archivo `.env` para configurar aspectos como:
-# - REACT_APP_API_URL: URL base para las llamadas a la API.
-# - REACT_APP_ENV: Entorno de ejecución (desarrollo, producción, etc.).
-
-# Contribuciones
-# Las contribuciones son bienvenidas. Por favor, sigue estos pasos:
-# 1. Haz un fork del repositorio.
-# 2. Crea una nueva rama: git checkout -b feature/nueva-funcionalidad
-# 3. Realiza tus cambios y haz commits claros.
-# 4. Envía un pull request describiendo tus cambios.
-
-# Licencia
-# Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
-
+# ========================================
 # Autor
-# Interianxx
-# GitHub: https://github.com/Interianxx
+# ========================================
+
+# Desarrollado por: Interianxx
+# Repositorio: https://github.com/Interianxx/React-frontend
