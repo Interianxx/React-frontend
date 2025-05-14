@@ -97,7 +97,13 @@ Este proyecto es la **interfaz de usuario** de una aplicación web de gestión d
    ```
 4. Envía un pull request explicando tus cambios.
 
-## Autor
+## Esta aplicacion fue basada en un proyecto de SpringBoot con Autenticacion de JWT, sin embargo, el calendario, las notificaciones, el crud de contactos y categorias fue por nuestra cuenta, a continuación enviare las paginas en donde partimos para el proyecto
 
-- **Interianxx**
-- [GitHub - Interianxx](https://github.com/Interianxx)
+- https://www.bezkoder.com/spring-boot-react-jwt-auth/
+- https://www.bezkoder.com/spring-boot-react-jwt-auth/
+
+## Autores 
+
+- **Nombre**: [Jose Alejandro Interian Pech, Carla Escalante, Jose Ramirez]
+- **Email**: [al070687@uacam.mx, al064216@uacam.mx, al064255@uacam.mx]]
+
